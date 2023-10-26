@@ -544,6 +544,18 @@ pub struct Opts {
     )]
     pub quiet: bool,
 
+    /// When the flag is present, the output is only the number of results
+    /// '--result-count' can be used as an alias.
+    #[arg(
+        long,
+        alias = "result-count",
+        hide_short_help = true,
+        conflicts_with("max_results"),
+        help = "Returns total number of results found",
+        long_help
+    )]
+    pub res_count: bool,
+
     /// Enable the display of filesystem errors for situations such as
     /// insufficient permissions or dead symlinks.
     #[arg(
